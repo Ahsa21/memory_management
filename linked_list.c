@@ -149,20 +149,27 @@ Node* list_search(Node** head, uint16_t data) {
 
 
 
-
-
-// Display function
 void list_display(Node** head) {
-    Node* temp = *head;
+    if (head == NULL) {
+        printf("[]\n");
+        return;
+    }
+
+    Node* current = *head;
     printf("[");
-    while (temp != NULL) {
-        temp = temp->next;
-        if (temp != NULL) {
+
+    // Traverse & print each node data
+    while (current != NULL) {
+        printf("%d", current->data);
+
+        if (current->next != NULL) {
             printf(", ");
         }
+        current = current->next;
     }
     printf("]\n");
 }
+
 
 void list_display_range(Node** head, Node* start_node, Node* end_node) {
     Node* temp = *head;
