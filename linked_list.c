@@ -6,14 +6,6 @@
 #include <string.h>
 
 
- typedef struct Node {
-    int data;           // Stores the data as an unsigned 16-bit integer
-    struct Node* next;       // A pointer to the next node in the list
-    
-} Node;
-
-
-
 
 // Initialization function
 void list_init(Node** head, size_t size) {
